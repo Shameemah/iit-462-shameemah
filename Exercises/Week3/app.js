@@ -14,7 +14,6 @@ $(".comment-input input[type='button']").on("click", function(){
 });
 
 $(".comment-input input[type='button']").on("keypress", function(event){
-
   if(event.keyCode == 13) {
     addCommentFromInputBox();
   }
