@@ -3,9 +3,9 @@ $(".comment-input input[type='button']").on("click", function(){
 
   if($comment_text.val() !== "") {
     $newComment.text($comment_text.val());
+    $newComment.fadeIn(100);
     $(".comments").append($newComment);
     $comment_text.val("");
   }
-  
 });
 $(document).ready();
