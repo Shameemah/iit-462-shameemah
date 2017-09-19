@@ -1,9 +1,9 @@
 var hand = [
    { "rank":"two", "suit":"spades" },
    { "rank":"two", "suit":"spades" },
-   { "rank":"two", "suit":"spades" },
-   { "rank":"two", "suit":"clubs" },
-   { "rank":"eight", "suit":"spades" }
+   { "rank":"three", "suit":"spades" },
+   { "rank":"three", "suit":"clubs" },
+   { "rank":"two", "suit":"spades" }
 ];
 
 var ranks = ["two","three","four","five","six","seven","eight","nine","ten","jack","queen","king","ace"];
