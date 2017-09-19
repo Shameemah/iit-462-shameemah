@@ -1,0 +1,18 @@
+[
+  {
+    "description" : "Get groceries",
+    "tags" : ["shopping", "chores"]
+  },
+  {
+    "description" : "Study for test",
+    "tags" : ["school", "test"]
+  },
+  {
+    "description" : "Finish homework",
+    "tags" : ["school", "assignment"]
+  },
+  {
+    "description" : "Get Bathroom Rug",
+    "tags" : ["shopping", "chores"]
+  }
+]
