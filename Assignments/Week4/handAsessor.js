@@ -31,6 +31,10 @@ var containsPair = function (hand) {
                   result = "Two Pair";
                 }
             } else if (containsNTimes(handRanks, rank, 3)) {
+                var ranks = rank;
+                if (containsNTimes(handRanks, rank, 2)) {
+                    console.log("I am reading this section")
+                }
                 result = "Three of a Kind";
             } else if (containsNTimes(handRanks, rank, 4)) {
                 result = "Four of a Kind";
