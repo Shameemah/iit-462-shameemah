@@ -1,17 +1,18 @@
 var hand = [
-   { "rank":"two", "suit":"spades" },
-   { "rank":"two", "suit":"spades" },
-   { "rank":"three", "suit":"spades" },
-   { "rank":"three", "suit":"clubs" },
-   { "rank":"two", "suit":"spades" }
+   { "rank":"five", "suit":"spades" },
+   { "rank":"four", "suit":"diamonds" },
+   { "rank":"one", "suit":"diamonds" },
+   { "rank":"three", "suit":"diamonds" },
+   { "rank":"two", "suit":"hearts" }
 ];
 
 var ranks = ["two","three","four","five","six","seven","eight","nine","ten","jack","queen","king","ace"];
-var suits = ["spades", "hearts", "clubs", "diamonds"];
+var suits = ["spades", "hearts", "diamonds", "diamonds"];
 var containsPair = function (hand) {
 
         //Default result is bust
         var result = "Bust", handRanks, handSuits;
+        var pairs = 0;
 
         // array of hand ranks
         handRanks = hand.map(function (card) {
@@ -27,15 +28,17 @@ var containsPair = function (hand) {
         ranks.forEach(function (rank) {
             if (containsNTimes(handRanks, rank, 2)) {
                 var ranks = rank;
-                if (ranks.length = 2 ) {
+                pairs++;
+                console.log(pairs);
+                if (ranks.length = 2) {
                   result = "Two Pair";
                 }
             } else if (containsNTimes(handRanks, rank, 3)) {
-                var ranks = rank;
-                if (containsNTimes(handRanks, rank, 2)) {
-                    console.log("I am reading this section")
+                if (pairs = 1) {
+                  result = "Full House";
+                  console.log(result);
                 }
-                result = "Three of a Kind";
+              result = "Three of a Kind";
             } else if (containsNTimes(handRanks, rank, 4)) {
                 result = "Four of a Kind";
             } else if (containsNTimes(handSuits, suits, 5)) {
