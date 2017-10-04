@@ -1,0 +1,8 @@
+{
+  "name": "amazrrific",
+  "description": "Just trying out some redis stuff",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "2.8.0"
+  }
+}
