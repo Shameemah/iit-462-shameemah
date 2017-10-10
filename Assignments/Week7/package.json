@@ -1,0 +1,8 @@
+{
+  "name": "Assignment 7",
+  "description": "Card Hands Asisgnment",
+  "version": "0.0.1",
+  "dependencies": {
+    "redis": "2.8.0"
+  }
+}
