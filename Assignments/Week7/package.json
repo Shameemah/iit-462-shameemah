@@ -16,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/Shameemah/iit-462-shameemah/issues"
   },
-  "homepage": "https://github.com/Shameemah/iit-462-shameemah#readme"
+  "homepage": "https://github.com/Shameemah/iit-462-shameemah#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.12.1"
+  }
 }
