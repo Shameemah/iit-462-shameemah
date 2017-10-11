@@ -1,19 +1,9 @@
 var express = require("express");
 var app = express();
-var bodyParser = require('body-parser')
-var path = require('path');
 const port = 8000;
 
-// Using a front-end so I can actually test this
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Allow req.body to work
-app.use(bodyParser.urlencoded({
-   extended: true
-}));
-
-
 var id;
+var singleHand;
 var hands =
   [
     {
@@ -65,8 +55,7 @@ app.get("/hands/:id/cards", function(req, res) {
 app.post("/hands", function (req, res) {
 
     id = hands.length+1;
-
-    var singleHand =
+    singleHand =
     [
       {"suit" : "hearts", "rank" : "a"},
       {"suit" : "hearts", "rank" : "k"},
@@ -88,7 +77,9 @@ app.post("/hands", function (req, res) {
 })
 
 app.put('/hands/:id', function(req,res) {
-  var singleHand =
+
+      id = req.params.id;
+      singleHand =
       [
         {"suit" : "spades", "rank" : "6"},
         {"suit" : "hearts", "rank" : "7"},
@@ -96,8 +87,6 @@ app.put('/hands/:id', function(req,res) {
         {"suit" : "spades", "rank" : "2"},
         {"suit" : "spades", "rank" : "k"}
       ]
-
-      id = req.params.id;
 
     if (hands[id-1]) {
 
