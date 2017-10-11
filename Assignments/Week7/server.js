@@ -62,36 +62,30 @@ app.get("/hands/:id/cards", function(req, res) {
     }
 });
 
-// app.post("/hands", function(req, res) {
-//   console.log("calling post");
-//   res.end();
-// });
+app.post("/hands", function (req, res) {
 
-// app.post("/hands", function (req, res) {
-//
-//     console.log(req.body);
-//     id = hands.length+1;
-//
-//     var singleHand =
-//     [
-//       {"suit" : "spades", "rank" : "k"},
-//       {"suit" : "hearts", "rank" : "j"},
-//       {"suit" : "clubs", "rank" : "q"},
-//       {"suit" : "spades", "rank" : "1"},
-//       {"suit" : "spades", "rank" : "8"}
-//     ]
-//
-//     var hand = {};
-//     var postId = {};
-//
-//     postId.id = id;
-//     hand.id = id;
-//     hand.cards = singleHand;
-//     hands.push(hand);
-//
-//     console.log(hands);
-//     res.send(postId);
-// })
+    id = hands.length+1;
+
+    var singleHand =
+    [
+      {"suit" : "hearts", "rank" : "a"},
+      {"suit" : "hearts", "rank" : "k"},
+      {"suit" : "hearts", "rank" : "j"},
+      {"suit" : "hearts", "rank" : "q"},
+      {"suit" : "hearts", "rank" : "2"}
+    ]
+
+    var hand = {};
+    var newPostId = {};
+
+    newPostId.id = id;
+    hand.id = id;
+    hand.cards = singleHand;
+    hands.push(hand);
+
+    id++;
+    res.send(newPostId);
+})
 
 app.put('/hands/:id', function(req,res) {
   var singleHand =
