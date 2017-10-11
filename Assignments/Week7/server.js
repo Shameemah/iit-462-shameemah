@@ -1,22 +1,32 @@
 var express = require("express");
-var mongodb = require('mongodb');
-var ObjectId = require('mongodb').ObjectID;
-const MongoClient    = require('mongodb').MongoClient;
-const bodyParser     = require('body-parser');
 var app = express();
-var db;
 
-const port = 8000;
-
-post_params = JSON.stringify(
+var hands =
   [
-    {"suit" : "diamonds", "rank" : "4"},
-    {"suit" : "hearts", "rank" : "3"},
-    {"suit" : "diamonds", "rank" : "a"},
-    {"suit" : "spades", "rank" : "2"},
-    {"suit" : "spades", "rank" : "9"},
+    {
+      "id" : "1",
+      "cards" :
+      [
+        {"suit" : "diamonds", "rank" : "4"},
+        {"suit" : "hearts", "rank" : "3"},
+        {"suit" : "diamonds", "rank" : "a"},
+        {"suit" : "spades", "rank" : "2"},
+        {"suit" : "spades", "rank" : "9"}
+      ]
+    },
+    {
+      "id" : "2",
+      "cards" :
+      [
+        {"suit" : "spades", "rank" : "k"},
+        {"suit" : "hearts", "rank" : "j"},
+        {"suit" : "clubs", "rank" : "q"},
+        {"suit" : "spades", "rank" : "1"},
+        {"suit" : "spades", "rank" : "8"}
+      ]
+    }
   ]
-)
+
 
 MongoClient.connect('mongodb://localhost:27017/hands', function (err, database) {
   if (err)
@@ -47,14 +57,10 @@ app.get("/hands/:id/cards", function(req, res) {
     })
 });
 
-// app.post('/hands', function (req, res) {
-//
-//   MongoClient.connect('mongodb://localhost:27017/hands', function (err, db) {
-//
-//     db.collection('hands').insertOne(post_params, function (err, result) {
-//       if (err) console.log(err);
-//       console.log(result);
-//       res.status(200).send(result[0]["_id"]);
-//     })
-//   })
-// });
+app.post('/hands', function (req, res) {
+    db.collection('hands').insertOne(post_params, function (err, result) {
+      if (err) console.log(err);
+      console.log(result);
+      res.status(200).send(result[0]["_id"]);
+    })
+});
